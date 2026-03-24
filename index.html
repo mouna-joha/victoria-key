@@ -412,6 +412,14 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
 --scheme:light;
 }
 }
+
+/* ICON SVG STYLING */
+.icon-svg{
+width:1.5rem;height:1.5rem;display:inline-block;vertical-align:middle;filter:brightness(0.9);transition:filter .2s;
+}
+.btn-wa .icon-svg{width:1.1rem;height:1.1rem;margin-right:4px}
+.pay-ico .icon-svg{width:2rem;height:2rem}
+.ti .icon-svg{width:1.1rem;height:1.1rem}
 </style>
 </head>
 <body>
@@ -458,7 +466,7 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
     <div class="hero-btns">
       <button class="btn-main" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" data-i18n="shop_now">Shop Now</button>
       <a class="btn-wa" href="https://wa.me/31627385976?text=Hello%20Victoria%20Key%2C%20I%20want%20to%20order!" target="_blank">
-        <span>💬</span><span data-i18n="wa_order">Order on WhatsApp</span>
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-svg"><span data-i18n="wa_order">Order on WhatsApp</span>
       </a>
     </div>
   </div>
@@ -478,11 +486,11 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
 </section>
 
 <div class="trust">
-  <div class="ti">📦 <em data-i18n="t1">Ships from Amsterdam</em></div>
+  <div class="ti"><img src="https://static.cdnlogo.com/logos/p/81/postnl.svg" alt="PostNL" class="icon-svg"> <em data-i18n="t1">Ships from Amsterdam</em></div>
   <div class="ti">🌍 <em data-i18n="t2">180+ Countries</em></div>
-  <div class="ti">💬 <em data-i18n="t3">WhatsApp Support</em></div>
-  <div class="ti">💳 <em data-i18n="t4">PayPal · Bank · WhatsApp</em></div>
-  <div class="ti">📬 <em data-i18n="t5">Tracked Shipping · PostNL</em></div>
+  <div class="ti"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-svg"> <em data-i18n="t3">WhatsApp Support</em></div>
+  <div class="ti"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/paypal.svg" alt="PayPal" class="icon-svg"> <em data-i18n="t4">PayPal · Bank · WhatsApp</em></div>
+  <div class="ti"><img src="https://static.cdnlogo.com/logos/p/81/postnl.svg" alt="PostNL" class="icon-svg"> <em data-i18n="t5">Tracked Shipping · PostNL</em></div>
 </div>
 
 <section id="shop">
@@ -545,19 +553,19 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
     <h2 class="sec-ttl" data-i18n="pay_title">3 Ways to Pay</h2>
     <div class="pay-cards">
       <div class="pay-card">
-        <div class="pay-ico">💸</div>
+        <div class="pay-ico"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/paypal.svg" alt="PayPal" class="icon-svg"></div>
         <div class="pay-title">PayPal</div>
         <div class="pay-desc" data-i18n="pay1_d">Safe and fast. Buyer protection included. Send payment after we confirm your order.</div>
         <div class="pay-detail">paypal.me/<strong id="pp-link">mounajoha</strong></div>
       </div>
       <div class="pay-card">
-        <div class="pay-ico">📱</div>
+        <div class="pay-ico"><img src="https://cdn.jsdelivr.net/npm/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-svg"></div>
         <div class="pay-title">WhatsApp</div>
         <div class="pay-desc" data-i18n="pay2_d">Message us to place your order. We confirm and send payment details.</div>
         <div class="pay-detail" id="wa-display">+31627385976</div>
       </div>
       <div class="pay-card">
-        <div class="pay-ico">🏦</div>
+        <div class="pay-ico"><img src="https://static.cdnlogo.com/logos/p/81/postnl.svg" alt="Bank" class="icon-svg"></div>
         <div class="pay-title" data-i18n="pay3_t">Bank Transfer</div>
         <div class="pay-desc" data-i18n="pay3_d">EU bank transfer via IBAN. Ideal for European customers. Fast and no fees.</div>
         <div class="pay-detail" id="iban-display">IBAN: NL00 XXXX 0000 0000 00</div>
@@ -931,14 +939,17 @@ return`<div class="prod-card">
 function updPrice(id,sz){const p=PRODUCTS.find(x=>x.id===id);if(p)document.getElementById('pr-'+id).textContent=fmt(p.sizes[sz])}
 
 function renderShipping(){
-document.getElementById('ship-grid').innerHTML=ZONES.map(z=>`
+document.getElementById('ship-grid').innerHTML=ZONES.map(z=>{
+  const carrier_icon = z.carrier === 'PostNL' ? 'https://static.cdnlogo.com/logos/p/81/postnl.svg' : 'https://cdn.jsdelivr.net/npm/simple-icons/icons/dhl.svg';
+  return `
     <div class="ship-card">
       <div class="ship-flag">${z.flag}</div>
       <div class="ship-zone">${z.zone[lang]||z.zone.en}</div>
       <div class="ship-days">${z.days[lang]||z.days.en}</div>
       <div class="ship-cost">${T('ship_cost')}: ${fmt(z.eur)}</div>
-      <div class="ship-carrier" style="font-size:.65rem;color:var(--purple);margin-top:4px">${z.carrier}</div>
-    </div>`).join('');
+      <div class="ship-carrier"><img src="${carrier_icon}" alt="${z.carrier}" class="icon-svg" style="width:0.9rem;height:0.9rem"> ${z.carrier}</div>
+    </div>`;
+}).join('');
 }
 
 // ============================================================
