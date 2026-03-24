@@ -415,11 +415,17 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
 
 /* ICON SVG STYLING */
 .icon-svg{
-width:1.5rem;height:1.5rem;display:inline-block;vertical-align:middle;filter:brightness(0.9);transition:filter .2s;
+width:1.5rem;height:1.5rem;display:inline-block;vertical-align:middle;filter:brightness(0.85) saturate(1.1);transition:filter .2s;
 }
 .btn-wa .icon-svg{width:1.1rem;height:1.1rem;margin-right:4px}
 .pay-ico .icon-svg{width:2rem;height:2rem}
 .ti .icon-svg{width:1.1rem;height:1.1rem}
+
+/* DARK MODE - Lighter icons */
+html[data-theme="dark"] .icon-svg{filter:brightness(1.6) saturate(1.1)}
+@media(prefers-color-scheme:dark){
+html:not([data-theme="light"]) .icon-svg{filter:brightness(1.6) saturate(1.1)}
+}
 </style>
 </head>
 <body>
