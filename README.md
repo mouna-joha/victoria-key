@@ -1,4 +1,6 @@
 # Victoria Key — Pocket Perfume Store
+**v1.0 · First Release**
+
 ## GitHub Pages Setup Guide
 
 ### 📁 Folder Structure

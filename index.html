@@ -670,7 +670,7 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
 
 <script>
 // ============================================================
-// ✏️  EDIT THESE — your personal details
+// CONFIGURATION — Edit Your Personal Details Here
 // ============================================================
 const CFG = {
 whatsapp : '31627385976',
@@ -680,7 +680,7 @@ email    : 'johamouna@gmail.com',
 };
 
 // ============================================================
-// CURRENCIES
+// CURRENCY CONFIGURATION
 // ============================================================
 const CURR={EUR:{s:'€',r:1},USD:{s:'$',r:1.09},GBP:{s:'£',r:0.86},AED:{s:'د.إ',r:4},SAR:{s:'ر.س',r:4.09},TRY:{s:'₺',r:35},SYP:{s:'ل.س',r:14200}};
 let cur=localStorage.getItem('vk_cur')||'EUR';
@@ -690,7 +690,7 @@ let cart=JSON.parse(localStorage.getItem('vk_cart')||'{}');
 function fmt(e){const{s,r}=CURR[cur];const v=e*r;return s+(v>=100?Math.round(v).toLocaleString():v.toFixed(2))}
 
 // ============================================================
-// PRODUCTS
+// PRODUCTS DATA — 5 Fragrance Scents
 // ============================================================
 const PRODUCTS=[
   {id:68,color:'#7B3FBE',icon:'🟣',img:'https://ae-pic-a1.aliexpress-media.com/kf/S424f430dda3f499f8ae6c967d0cb113eh.jpg_960x960q75.jpg_.avif',
@@ -855,7 +855,7 @@ open_paypal:'Ouvrir PayPal',open_wa_proof:'Envoyer preuve via WhatsApp'},
 function T(k){return(I18N[lang]||I18N.en)[k]||(I18N.en)[k]||k}
 
 // ============================================================
-// THEME
+// THEME MANAGEMENT — Dark/Light Mode
 // ============================================================
 function getTheme(){
   const saved=localStorage.getItem('vk_theme');
@@ -883,7 +883,7 @@ function toggleTheme(){
 }
 
 // ============================================================
-// HAMBURGER MENU
+// MOBILE MENU — Hamburger Navigation
 // ============================================================
 function toggleMenu(){
   document.getElementById('hamburger').classList.toggle('open');
@@ -895,7 +895,7 @@ function closeMenu(){
 }
 
 // ============================================================
-// RENDER
+// RENDERING — Display Products & Shipping Zones
 // ============================================================
 function renderProducts(){
 document.getElementById('prod-grid').innerHTML=PRODUCTS.map(p=>{
@@ -941,7 +941,7 @@ document.getElementById('ship-grid').innerHTML=ZONES.map(z=>`
 }
 
 // ============================================================
-// CART
+// SHOPPING CART — Add/Remove/Update Items
 // ============================================================
 function addToCart(id){
 const sz=document.getElementById('sz-'+id).value;
@@ -1006,7 +1006,7 @@ function closeCart(){document.getElementById('overlay').classList.remove('open')
 function selPay(el){document.querySelectorAll('.pay-opt').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
 
 // ============================================================
-// FORM VALIDATION
+// FORM VALIDATION — Check Required Fields
 // ============================================================
 function validateForm(){
   let valid=true;
@@ -1022,7 +1022,7 @@ function validateForm(){
       el.classList.add('invalid');
       errEl.classList.add('show');
       valid=false;
-      // Remove invalid state on input
+      // Clear validation error on user input
       el.addEventListener('input',function handler(){
         el.classList.remove('invalid');
         errEl.classList.remove('show');
@@ -1037,7 +1037,7 @@ function validateForm(){
 }
 
 // ============================================================
-// ORDER MESSAGE
+// ORDER MESSAGE BUILDER — Format WhatsApp Message
 // ============================================================
 function buildMsg(){
 const n=document.getElementById('f-name').value;
@@ -1061,7 +1061,7 @@ window.open(`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(buildMsg())
 }
 
 // ============================================================
-// PAYMENT MODAL (replaces ugly alert())
+// PAYMENT MODAL — User-Friendly Payment Dialog
 // ============================================================
 let payModalData={};
 
@@ -1121,19 +1121,19 @@ if(pm==='bank'){
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
 
 // ============================================================
-// I18N
+// INTERNATIONALIZATION — Multi-Language Support
 // ============================================================
 function applyI18n(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k=el.getAttribute('data-i18n');
     if(I18N[lang]&&I18N[lang][k])el.textContent=I18N[lang][k];
   });
-  // Placeholders
+  // Update input placeholders
   document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
     const k=el.getAttribute('data-i18n-ph');
     if(I18N[lang]&&I18N[lang][k])el.placeholder=I18N[lang][k];
   });
-  // Error messages
+  // Update error messages
   document.querySelectorAll('.field-error[data-i18n]').forEach(el=>{
     const k=el.getAttribute('data-i18n');
     if(I18N[lang]&&I18N[lang][k])el.textContent=I18N[lang][k];
@@ -1149,6 +1149,9 @@ applyI18n();renderProducts();renderShipping();
 
 function setCur(c){cur=c;localStorage.setItem('vk_cur',c);document.getElementById('cur-sel').value=c;renderProducts();renderShipping()}
 
+// ============================================================
+// CONFIGURATION PATCHER — Update Config Details in DOM
+// ============================================================
 function patchConfig(){
 document.querySelectorAll('a[href*="31627385976"]').forEach(a=>{a.href=a.href.replace('31627385976',CFG.whatsapp)});
 const pp=document.getElementById('pp-link');if(pp)pp.textContent=CFG.paypalMe;
@@ -1159,6 +1162,9 @@ const fw=document.getElementById('footer-wa');if(fw)fw.href='https://wa.me/'+CFG
 const wad=document.getElementById('wa-display');if(wad)wad.textContent='+'+CFG.whatsapp;
 }
 
+// ============================================================
+// INITIALIZATION — Load Theme, Language, and Render Page
+// ============================================================
 document.addEventListener('DOMContentLoaded',()=>{
 document.getElementById('lang-sel').value=lang;
 document.getElementById('cur-sel').value=cur;
