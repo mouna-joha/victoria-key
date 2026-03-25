@@ -1057,7 +1057,7 @@ function shareProduct(id){
   const selectedPrice = fmt(selectedPriceValue);
   const baseUrl = (location.protocol.startsWith('http') ? `${location.origin}${location.pathname}` : BASE_URL);
   const productUrl = `${baseUrl.replace(/\/+$/, '')}#product-${p.id}`;
-  const text = `${title}\n${badge}\n${desc}\nPrice: ${selectedSize} — ${selectedPrice}\nImage: ${image}\n${productUrl}`;
+  const text = `${title}\n${badge}\n${desc}\nPrice: ${selectedSize} — ${selectedPrice}\n${productUrl}`;
 
   if(navigator.share){
     navigator.share({title:`Victoria Key: ${title}`,text,url:productUrl}).catch(()=>{});
