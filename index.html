@@ -3,8 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Victoria Key — Pocket Perfume Spray Mist</title>
-<meta name="description" content="Victoria Key Spray Mist 48ml — 5 unique scents. Ships worldwide from Amsterdam.">
+<title>Victoria Key — Pocket Perfume Spray Mist | Ships Worldwide</title>
+<meta name="description" content="Victoria Key Spray Mist 48ml — 5 unique scents. Ships worldwide from Amsterdam. Fast tracked delivery and secure payment.">
+<meta name="keywords" content="Victoria Key, perfume spray, pocket perfume, worldwide shipping, Dutch perfume, handmade fragrance">
+<link rel="canonical" href="https://mouna-joha.github.io/victoria-key/">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Victoria Key — Pocket Perfume Spray Mist" />
+<meta property="og:description" content="Victoria Key Spray Mist 48ml in 5 unique scents. Ships worldwide from Amsterdam with secure payment options." />
+<meta property="og:url" content="https://mouna-joha.github.io/victoria-key/" />
+<meta property="og:image" content="https://ae-pic-a1.aliexpress-media.com/kf/S8a9df2676bb243e1828a1a2a6da719e3d.png?has_lang=1&ver=2_960x960.png_.avif" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Victoria Key — Pocket Perfume Spray Mist" />
+<meta name="twitter:description" content="Victoria Key Spray Mist 48ml — 5 unique scents. Ships worldwide from Amsterdam." />
+<meta name="twitter:image" content="https://ae-pic-a1.aliexpress-media.com/kf/S8a9df2676bb243e1828a1a2a6da719e3d.png?has_lang=1&ver=2_960x960.png_.avif" />
+<meta name="twitter:site" content="@VictoriaKey" />
+<meta name="robots" content="index, follow" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Victoria Key Pocket Perfume Spray Mist",
+  "image": "https://ae-pic-a1.aliexpress-media.com/kf/S8a9df2676bb243e1828a1a2a6da719e3d.png?has_lang=1&ver=2_960x960.png_.avif",
+  "description": "5 unique fragrance spray mists in a pocket-size bottle. Ships worldwide from Amsterdam.",
+  "brand": {"@type": "Brand", "name": "Victoria Key"},
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "14.95",
+    "url": "https://mouna-joha.github.io/victoria-key/",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWLNPHQ8S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZWLNPHQ8S5');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -227,6 +266,13 @@ font-weight:500;color:#fff;border:none;border-radius:4px;transition:filter .2s,t
 }
 .add-btn:hover{filter:brightness(1.15)}
 .add-btn:active{transform:scale(.96)}
+.share-btn{
+border:1px solid var(--border);background:rgba(128,128,128,.07);color:var(--cream);
+padding:9px 14px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;
+transition:background .2s,transform .15s;
+}
+.share-btn:hover{background:rgba(123,63,190,.14);transform:translateY(-1px)}
+.share-btn:active{transform:scale(.98)}
 
 /* GALLERY */
 #gallery{background:var(--bg)}
@@ -736,6 +782,9 @@ iban     : 'NL00 XXXX 0000 0000 00',
 email    : 'johamouna@gmail.com',
 };
 
+// To avoid file:// or localhost hash issue, use your production site URL here
+const BASE_URL = 'https://mouna-joha.github.io/victoria-key/';
+
 // ============================================================
 // CURRENCY CONFIGURATION
 // ============================================================
@@ -791,6 +840,8 @@ const ZONES=[
 {flag:'🇪🇺',zone:{en:'Europe',ar:'أوروبا',nl:'Europa',de:'Europa',fr:'Europe'},days:{en:'3–5 days',ar:'3–5 أيام',nl:'3–5 dagen',de:'3–5 Tage',fr:'3–5 jours'},eur:7.50,carrier:'DHL'},
 {flag:'🌎',zone:{en:'Americas',ar:'الأمريكتان',nl:"Amerika's",de:'Amerika',fr:'Amériques'},days:{en:'6–9 days',ar:'6–9 أيام',nl:'6–9 dagen',de:'6–9 Tage',fr:'6–9 jours'},eur:13.50,carrier:'DHL'},
 {flag:'🌏',zone:{en:'Asia & Gulf',ar:'آسيا والخليج',nl:'Azië & Golf',de:'Asien & Golf',fr:'Asie & Golfe'},days:{en:'7–11 days',ar:'7–11 يوم',nl:'7–11 dagen',de:'7–11 Tage',fr:'7–11 jours'},eur:15.00,carrier:'DHL'},
+{flag:'🌍',zone:{en:'Africa',ar:'أفريقيا',nl:'Afrika',de:'Afrika',fr:'Afrique'},days:{en:'8–13 days',ar:'8–13 يوم',nl:'8–13 dagen',de:'8–13 Tage',fr:'8–13 jours'},eur:17.00,carrier:'DHL'},
+{flag:'🌐',zone:{en:'Oceania',ar:'أوقيانوسيا',nl:'Oceanië',de:'Ozeanien',fr:'Océanie'},days:{en:'9–15 days',ar:'9–15 يوم',nl:'9–15 dagen',de:'9–15 Tage',fr:'9–15 jours'},eur:19.50,carrier:'DHL'},
 ];
 
 const I18N={
@@ -810,7 +861,7 @@ your_order:'Your Order',items_label:'Items',cart_empty:'Your cart is empty.',
 your_info:'Your Details',total:'Total',pay_method:'Payment Method',
 wa_sub:'Send order via WhatsApp',bank:'Bank Transfer',
 order_wa:'Order via WhatsApp',confirm_order:'Confirm Order',
-add_cart:'Add to Cart',footer_city:'Amsterdam, Netherlands · Ships Worldwide',ship_cost:'Shipping',
+add_cart:'Add to Cart',share_product:'Share Product',share_hint:'Product details copied. Paste to share with friends.',footer_city:'Amsterdam, Netherlands · Ships Worldwide',ship_cost:'Shipping',
 copy:'Copy',close:'Close',copied:'Copied!',
 err_name:'Please enter your name',err_country:'Please enter your country',err_addr:'Please enter your address',
 ph_name:'Full name *',ph_country:'Country *',ph_addr:'Address, city, postal code *',ph_phone:'Phone / WhatsApp',ph_note:'Note (optional)',
@@ -834,7 +885,7 @@ your_order:'طلبك',items_label:'المنتجات',cart_empty:'سلتك فار
 your_info:'بياناتك',total:'الإجمالي',pay_method:'طريقة الدفع',
 wa_sub:'أرسل الطلب عبر واتساب',bank:'تحويل بنكي',
 order_wa:'اطلب عبر واتساب',confirm_order:'تأكيد الطلب',
-add_cart:'أضف للسلة',footer_city:'أمستردام، هولندا · شحن عالمي',ship_cost:'الشحن',
+add_cart:'أضف للسلة',share_product:'مشاركة المنتج',share_hint:'تم نسخ بيانات المنتج. ألصقها لمشاركتها.',footer_city:'أمستردام، هولندا · شحن عالمي',ship_cost:'الشحن',
 copy:'نسخ',close:'إغلاق',copied:'تم النسخ!',
 err_name:'الرجاء إدخال الاسم',err_country:'الرجاء إدخال البلد',err_addr:'الرجاء إدخال العنوان',
 ph_name:'الاسم الكامل *',ph_country:'البلد *',ph_addr:'العنوان، المدينة، الرمز البريدي *',ph_phone:'الهاتف / واتساب',ph_note:'ملاحظة (اختياري)',
@@ -857,7 +908,7 @@ your_order:'Jouw Bestelling',items_label:'Artikelen',cart_empty:'Je winkelwagen 
 your_info:'Jouw Gegevens',total:'Totaal',pay_method:'Betaalmethode',
 wa_sub:'Stuur bestelling via WhatsApp',bank:'Bankoverschrijving',
 order_wa:'Bestel via WhatsApp',confirm_order:'Bestelling Bevestigen',
-add_cart:'In Winkelwagen',footer_city:'Amsterdam, Nederland · Wereldwijde Verzending',ship_cost:'Verzendkosten',
+add_cart:'In Winkelwagen',share_product:'Deel Product',share_hint:'Productgegevens gekopieerd. Plak om te delen.',footer_city:'Amsterdam, Nederland · Wereldwijde Verzending',ship_cost:'Verzendkosten',
 copy:'Kopiëren',close:'Sluiten',copied:'Gekopieerd!',
 err_name:'Vul je naam in',err_country:'Vul je land in',err_addr:'Vul je adres in',
 ph_name:'Volledige naam *',ph_country:'Land *',ph_addr:'Adres, stad, postcode *',ph_phone:'Telefoon / WhatsApp',ph_note:'Opmerking (optioneel)',
@@ -880,7 +931,7 @@ your_order:'Ihre Bestellung',items_label:'Artikel',cart_empty:'Ihr Warenkorb ist
 your_info:'Ihre Daten',total:'Gesamt',pay_method:'Zahlungsmethode',
 wa_sub:'Bestellung per WhatsApp senden',bank:'Banküberweisung',
 order_wa:'Per WhatsApp bestellen',confirm_order:'Bestellung bestätigen',
-add_cart:'In den Warenkorb',footer_city:'Amsterdam, Niederlande · Weltweiter Versand',ship_cost:'Versandkosten',
+add_cart:'In den Warenkorb',share_product:'Produkt teilen',share_hint:'Produktdetails kopiert. Einfügen um zu teilen.',footer_city:'Amsterdam, Niederlande · Weltweiter Versand',ship_cost:'Versandkosten',
 copy:'Kopieren',close:'Schließen',copied:'Kopiert!',
 err_name:'Bitte Name eingeben',err_country:'Bitte Land eingeben',err_addr:'Bitte Adresse eingeben',
 ph_name:'Vollständiger Name *',ph_country:'Land *',ph_addr:'Adresse, Stadt, PLZ *',ph_phone:'Telefon / WhatsApp',ph_note:'Anmerkung (optional)',
@@ -903,7 +954,7 @@ your_order:'Votre Commande',items_label:'Articles',cart_empty:'Votre panier est 
 your_info:'Vos Informations',total:'Total',pay_method:'Mode de Paiement',
 wa_sub:'Envoyer la commande par WhatsApp',bank:'Virement Bancaire',
 order_wa:'Commander via WhatsApp',confirm_order:'Confirmer la Commande',
-add_cart:'Ajouter au Panier',footer_city:'Amsterdam, Pays-Bas · Livraison Mondiale',ship_cost:'Livraison',
+add_cart:'Ajouter au Panier',share_product:'Partager le produit',share_hint:'Détails du produit copiés. Collez pour partager.',footer_city:'Amsterdam, Pays-Bas · Livraison Mondiale',ship_cost:'Livraison',
 copy:'Copier',close:'Fermer',copied:'Copié !',
 err_name:'Veuillez entrer votre nom',err_country:'Veuillez entrer votre pays',err_addr:'Veuillez entrer votre adresse',
 ph_name:'Nom complet *',ph_country:'Pays *',ph_addr:'Adresse, ville, code postal *',ph_phone:'Téléphone / WhatsApp',ph_note:'Note (facultatif)',
@@ -958,9 +1009,11 @@ function closeMenu(){
 // RENDERING — Display Products & Shipping Zones
 // ============================================================
 function renderProducts(){
+const pageBase = (location.protocol.startsWith('http') ? `${location.origin}${location.pathname}` : BASE_URL);
 document.getElementById('prod-grid').innerHTML=PRODUCTS.map(p=>{
 const dots=[1,2,3,4,5].map(i=>`<div class="idot" style="${i<=p.intensity?'background:'+p.color:''}"></div>`).join('');
-return`<div class="prod-card">
+const href = `${pageBase.replace(/\/+$/, '')}#product-${p.id}`;
+return`<div class="prod-card" id="product-${p.id}" data-href="${href}">
       <div class="prod-strip" style="background:${p.color}"></div>
       <div class="prod-img-area">
         <img src="${p.img}" alt="${p.name[lang]||p.name.en}"
@@ -982,6 +1035,9 @@ return`<div class="prod-card">
           </select>
           <span class="prod-price" id="pr-${p.id}">${fmt(Object.values(p.sizes)[0])}</span>
           <button class="add-btn" style="background:${p.color}" onclick="addToCart(${p.id})">${T('add_cart')}</button>
+          <button class="share-btn" onclick="shareProduct(${p.id})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px;">
+            <path d="M18 8a3 3 0 0 0-2.83 4H9.83A3 3 0 1 0 9 16h5.17A3 3 0 1 0 17 8zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM7 10a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM17 16a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="currentColor"/>
+          </svg>${T('share_product')}</button>
         </div>
       </div>
     </div>`;
@@ -989,6 +1045,29 @@ return`<div class="prod-card">
 }
 
 function updPrice(id,sz){const p=PRODUCTS.find(x=>x.id===id);if(p)document.getElementById('pr-'+id).textContent=fmt(p.sizes[sz])}
+
+function shareProduct(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const title = p.name[lang] || p.name.en;
+  const baseUrl = (location.protocol.startsWith('http') ? `${location.origin}${location.pathname}` : BASE_URL);
+  const productUrl = `${baseUrl.replace(/\/+$/, '')}#product-${p.id}`;
+  const text = `${title} — ${p.badge[lang] || p.badge.en} | ${p.desc[lang] || p.desc.en}\n${productUrl}`;
+
+  if(navigator.share){
+    navigator.share({title:`Victoria Key: ${title}`,text,url:productUrl}).catch(()=>{});
+    return;
+  }
+
+  const fallbackText = `${text} \n${T('share_hint')}`;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(fallbackText).then(()=>showToast(T('copied'))).catch(()=>{
+      window.open(`https://wa.me/31627385976?text=${encodeURIComponent(fallbackText)}`,'_blank');
+    });
+  } else {
+    window.open(`https://wa.me/31627385976?text=${encodeURIComponent(fallbackText)}`,'_blank');
+  }
+}
 
 function renderShipping(){
 document.getElementById('ship-grid').innerHTML=ZONES.map(z=>{
@@ -1213,6 +1292,16 @@ applyI18n();renderProducts();renderShipping();
 
 function setCur(c){cur=c;localStorage.setItem('vk_cur',c);document.getElementById('cur-sel').value=c;renderProducts();renderShipping()}
 
+function scrollToHashProduct(){
+  if(location.hash && location.hash.startsWith('#product-')){
+    const id=location.hash.slice(1);
+    const el=document.getElementById(id);
+    if(el){
+      setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),200);
+    }
+  }
+}
+
 // ============================================================
 // CONFIGURATION PATCHER — Update Config Details in DOM
 // ============================================================
@@ -1235,6 +1324,7 @@ document.getElementById('cur-sel').value=cur;
 const h=document.getElementById('html-root');h.lang=lang;h.dir=lang==='ar'?'rtl':'ltr';
 applyTheme(getTheme());
 applyI18n();renderProducts();renderShipping();updateBadge();patchConfig();
+scrollToHashProduct();
 });
 </script>
 </body>
