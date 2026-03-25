@@ -421,18 +421,29 @@ font-size:.75rem;letter-spacing:.1em;opacity:0;pointer-events:none;transition:al
 
 footer{
 background:var(--bg);border-top:1px solid var(--border);padding:26px 28px;
-display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
 }
+.footer-inner{
+max-width:1220px;width:100%;margin:0 auto;
+display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;
+}
+.foot-left{display:flex;flex-direction:column;gap:8px;}
+.foot-left-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
 .foot-brand{
 font-family:var(--font-serif);font-size:1rem;letter-spacing:.12em;
 background:linear-gradient(90deg,var(--purple),var(--pink));
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .foot-info{font-size:.68rem;color:var(--muted);letter-spacing:.08em}
-.foot-links{display:flex;gap:18px}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
 .foot-links a{font-size:.68rem;color:var(--muted);transition:color .2s}
 .foot-links a:hover{color:var(--cream)}
-.foot-controls{display:flex;gap:10px}
+.foot-right{display:flex;align-items:center;gap:10px;justify-content:flex-end;}
+.foot-controls{display:flex;align-items:center;gap:10px;}
+
+@media(max-width:760px){
+.footer-inner{grid-template-columns:1fr;}
+.foot-right{justify-content:flex-start;}
+}
 
 @media(max-width:900px){
 .hero{grid-template-columns:1fr;padding:calc(var(--nav-h)+30px) 20px 50px;text-align:center}
@@ -691,33 +702,39 @@ html:not([data-theme="light"]) .icon-svg{filter:brightness(1.6) saturate(1.1)}
 
 <footer>
   <div class="wrap footer-inner">
-    <div class="foot-brand">Victoria Key</div>
-    <div class="foot-info" data-i18n="footer_city">Landgraaf, Netherlands · Ships Worldwide</div>
-  <div class="foot-links">
-    <a href="mailto:info@victoriakey.com" id="footer-email">info@victoriakey.com</a>
-    <a href="https://wa.me/31627385976" id="footer-wa" target="_blank">WhatsApp</a>
-  </div>
-  <div class="foot-controls">
-    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle theme">🌙</button>
-    <label class="sr-only" for="lang-sel">Language</label>
-    <select class="ctl" onchange="setLang(this.value)" id="lang-sel" aria-label="Language">
-      <option value="en">🌐 EN</option>
-      <option value="ar">🌐 عربي</option>
-      <option value="nl">🌐 NL</option>
-      <option value="de">🌐 DE</option>
-      <option value="fr">🌐 FR</option>
-    </select>
-    <label class="sr-only" for="cur-sel">Currency</label>
-    <select class="ctl" onchange="setCur(this.value)" id="cur-sel" aria-label="Currency">
-      <option value="EUR">€ EUR</option>
-      <option value="USD">$ USD</option>
-      <option value="GBP">£ GBP</option>
-      <option value="AED">AED</option>
-      <option value="SAR">SAR</option>
-      <option value="TRY">₺ TRY</option>
-      <option value="SYP">SYP</option>
-    </select>
-  </div>
+    <div class="foot-left">
+      <div class="foot-left-top">
+        <div class="foot-brand">Victoria Key</div>
+        <div class="foot-info" data-i18n="footer_city">Landgraaf, Netherlands · Ships Worldwide</div>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:info@victoriakey.com" id="footer-email">info@victoriakey.com</a>
+        <a href="https://wa.me/31627385976" id="footer-wa" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-right">
+      <div class="foot-controls">
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle theme">🌙</button>
+        <label class="sr-only" for="lang-sel">Language</label>
+        <select class="ctl" onchange="setLang(this.value)" id="lang-sel" aria-label="Language">
+          <option value="en">🌐 EN</option>
+          <option value="ar">🌐 عربي</option>
+          <option value="nl">🌐 NL</option>
+          <option value="de">🌐 DE</option>
+          <option value="fr">🌐 FR</option>
+        </select>
+        <label class="sr-only" for="cur-sel">Currency</label>
+        <select class="ctl" onchange="setCur(this.value)" id="cur-sel" aria-label="Currency">
+          <option value="EUR">€ EUR</option>
+          <option value="USD">$ USD</option>
+          <option value="GBP">£ GBP</option>
+          <option value="AED">AED</option>
+          <option value="SAR">SAR</option>
+          <option value="TRY">₺ TRY</option>
+          <option value="SYP">SYP</option>
+        </select>
+      </div>
+    </div>
   </div>
 </footer>
 
