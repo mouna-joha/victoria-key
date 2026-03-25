@@ -1035,9 +1035,7 @@ return`<div class="prod-card" id="product-${p.id}" data-href="${href}">
           </select>
           <span class="prod-price" id="pr-${p.id}">${fmt(Object.values(p.sizes)[0])}</span>
           <button class="add-btn" style="background:${p.color}" onclick="addToCart(${p.id})">${T('add_cart')}</button>
-          <button class="share-btn" onclick="shareProduct(${p.id})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px;">
-            <path d="M18 8a3 3 0 0 0-2.83 4H9.83A3 3 0 1 0 9 16h5.17A3 3 0 1 0 17 8zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM7 10a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM17 16a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="currentColor"/>
-          </svg>${T('share_product')}</button>
+          <button class="share-btn" onclick="shareProduct(${p.id})">${T('share_product')}</button>
         </div>
       </div>
     </div>`;
@@ -1050,9 +1048,15 @@ function shareProduct(id){
   const p = PRODUCTS.find(x=>x.id===id);
   if(!p) return;
   const title = p.name[lang] || p.name.en;
+  const badge = p.badge[lang] || p.badge.en;
+  const desc = p.desc[lang] || p.desc.en;
+  const image = p.img;
+  const selectedSize = (document.getElementById(`sz-${id}`) && document.getElementById(`sz-${id}`).value) || Object.keys(p.sizes)[0];
+  const selectedPriceValue = p.sizes[selectedSize] || Object.values(p.sizes)[0];
+  const selectedPrice = fmt(selectedPriceValue);
   const baseUrl = (location.protocol.startsWith('http') ? `${location.origin}${location.pathname}` : BASE_URL);
   const productUrl = `${baseUrl.replace(/\/+$/, '')}#product-${p.id}`;
-  const text = `${title} — ${p.badge[lang] || p.badge.en} | ${p.desc[lang] || p.desc.en}\n${productUrl}`;
+  const text = `${title}\n${badge}\n${desc}\nPrice: ${selectedSize} — ${selectedPrice}\nImage: ${image}\n${productUrl}`;
 
   if(navigator.share){
     navigator.share({title:`Victoria Key: ${title}`,text,url:productUrl}).catch(()=>{});
