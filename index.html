@@ -122,7 +122,7 @@ display:flex;align-items:center;justify-content:center;
 /* THEME TOGGLE */
 .theme-toggle{
 background:rgba(128,128,128,.1);border:1px solid var(--border);color:var(--cream);
-width:34px;height:34px;border-radius:4px;display:flex;align-items:center;justify-content:center;
+width:26px;height:26px;border-radius:4px;display:flex;align-items:center;justify-content:center;
 font-size:1rem;transition:background .2s;
 }
 .theme-toggle:hover{background:rgba(128,128,128,.2)}
@@ -437,6 +437,7 @@ background:linear-gradient(90deg,var(--purple),var(--pink));
 .foot-links{display:flex;gap:18px;flex-wrap:wrap}
 .foot-links a{font-size:.68rem;color:var(--muted);transition:color .2s}
 .foot-links a:hover{color:var(--cream)}
+#footer-wa{color:#fff !important}
 .foot-right{display:flex;align-items:center;gap:10px;justify-content:flex-end;}
 .foot-controls{display:flex;align-items:center;gap:10px;}
 
@@ -480,9 +481,10 @@ html:not([data-theme="dark"]):not([data-theme="light"]){
 .icon-svg{
 width:1.5rem;height:1.5rem;display:inline-block;vertical-align:middle;filter:brightness(0.85) saturate(1.1);transition:filter .2s;
 }
-.btn-wa .icon-svg{width:1.1rem;height:1.1rem;margin-right:4px}
-.pay-ico .icon-svg{width:2rem;height:2rem}
-.ti .icon-svg{width:1.1rem;height:1.1rem}
+.btn-wa .icon-svg{width:1.1rem;height:1.1rem;margin-right:4px;filter:invert(100%) sepia(0%) saturate(0%) brightness(1.2);}
+.pay-ico .icon-svg{width:2rem;height:2rem;filter:invert(100%) sepia(0%) saturate(0%) brightness(1.3);}
+.ti .icon-svg{width:1.1rem;height:1.1rem;}
+.ti img[alt="WhatsApp"]{filter:invert(100%) sepia(0%) saturate(0%) brightness(1.2);}
 
 /* DARK MODE - Lighter icons */
 html[data-theme="dark"] .icon-svg{filter:brightness(1.6) saturate(1.1)}
@@ -903,22 +905,22 @@ open_paypal:'Open PayPal',open_wa_proof:'Send proof via WhatsApp',
 about_nav:'About',about_title:'About Me',about_sub:'Behind Victoria Key',about_p1:'I\'m Mouna, a secondary school student passionate about e-commerce, technology, and entrepreneurship. I created Victoria Key as my first business project.',about_p2:'Learning through hands-on experience, I\'ve explored product sourcing, pricing strategies, global shipping logistics, and customer management. Every aspect of this business teaches me something new.',about_p3:'My goal is to master the fundamentals of modern commerce while embracing artificial intelligence and technology. Victoria Key represents my journey of independence, continuous learning, and growth in the digital economy.'},
 
 ar:{nav_shop:'المتجر',nav_gallery:'الصور',nav_pay:'الدفع',nav_ship:'الشحن',cart:'السلة',
-hero_kicker:'أمستردام · هولندا · شحن عالمي',hero_sub2:'عطر جيب · سبراي',
+hero_kicker:'لاندخراف · هولندا · شحن عالمي',hero_sub2:'عطر جيب · سبراي',
 hero_desc:'5 روائح مميزة في زجاجة سبراي صغيرة أنيقة. احملي عطرك معك أينما ذهبت.',
 shop_now:'تسوق الآن',wa_order:'اطلب عبر واتساب',float_size:'حجم جيب',float_scents:'5 روائح',
-t1:'الشحن من أمستردام',t2:'أكثر من 180 دولة',t3:'دعم واتساب',t4:'PayPal · بنك · واتساب',t5:'شحن مع تتبع · PostNL',
+t1:'الشحن من لاندخراف',t2:'أكثر من 180 دولة',t3:'دعم واتساب',t4:'PayPal · بنك · واتساب',t5:'شحن مع تتبع · PostNL',
 shop_eye:'— 5 عطور',shop_em:'اختر',shop_rest:'عطرك المفضل',
 gal_eye:'— صور المنتج',gal_title:'كل التفاصيل',
 gal_intro:'كل سبراي يأتي في علبة سيليكون ملونة مع حلقة حمل — علقيها بحقيبتك أو مفاتيحك.',
 pay_eye:'— آمن وسهل',pay_title:'3 طرق للدفع',
 pay1_d:'سريع وآمن مع حماية المشتري.',pay2_d:'راسلنا على واتساب لإتمام طلبك.',
 pay3_t:'تحويل بنكي',pay3_d:'تحويل بنكي أوروبي عبر IBAN.',
-ship_eye:'— PostNL · أمستردام',ship_title:'شحن عالمي',
+ship_eye:'— PostNL · لاندخراف',ship_title:'شحن عالمي',
 your_order:'طلبك',items_label:'المنتجات',cart_empty:'سلتك فارغة.',
 your_info:'بياناتك',total:'الإجمالي',pay_method:'طريقة الدفع',
 wa_sub:'أرسل الطلب عبر واتساب',bank:'تحويل بنكي',
 order_wa:'اطلب عبر واتساب',confirm_order:'تأكيد الطلب',
-add_cart:'أضف للسلة',share_product:'مشاركة المنتج',share_hint:'تم نسخ بيانات المنتج. ألصقها لمشاركتها.',footer_city:'أمستردام، هولندا · شحن عالمي',ship_cost:'الشحن',
+add_cart:'أضف للسلة',share_product:'مشاركة المنتج',share_hint:'تم نسخ بيانات المنتج. ألصقها لمشاركتها.',footer_city:'لاندخراف، هولندا · شحن عالمي',ship_cost:'الشحن',
 copy:'نسخ',close:'إغلاق',copied:'تم النسخ!',
 err_name:'الرجاء إدخال الاسم',err_country:'الرجاء إدخال البلد',err_addr:'الرجاء إدخال العنوان',
 ph_name:'الاسم الكامل *',ph_country:'البلد *',ph_addr:'العنوان، المدينة، الرمز البريدي *',ph_phone:'الهاتف / واتساب',ph_note:'ملاحظة (اختياري)',
